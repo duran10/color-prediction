@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Prediction Results</title>
+  <title>Color Prediction</title>
   <style>
     /* Add some custom styles here */
     body {
@@ -60,7 +60,7 @@
       <input type="submit" value="Back">
     </form>
   {% else %}
-    <h1>Make a prediction</h1>
+    <h1>Color Prediction</h1>
     <form method="POST" action="{{ url_for('index') }}">
       <label for="year">Year:</label>
       <input type="text" name="year" id="year">
@@ -77,3 +77,4 @@
 
 </body>
 </html>
+

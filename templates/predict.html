@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prediction Results</title>
+  <style>
+    /* Add some custom styles here */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin: 30px;
+    }
+    label {
+      font-weight: bold;
+      margin-right: 10px;
+    }
+    input[type="text"], select {
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+    }
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  {% if predictions %}
+    <h1>Prediction Results</h1>
+    <form method="POST" action="{{ url_for('get_prediction') }}">
+      <label for="trial_number">Select a trial number:</label>
+      <select name="trial_number" id="trial_number">
+        {% for i in range(480) %}
+          <option value="{{ i }}">{{ i + 1 }}</option>
+        {% endfor %}
+      </select>
+      <input type="submit" value="Get Prediction">
+    </form>
+    <form action="{{url_for('index')}}">
+      <input type="submit" value="Back">
+    </form>
+  {% else %}
+    <h1>Make a prediction</h1>
+    <form method="POST" action="{{ url_for('index') }}">
+      <label for="year">Year:</label>
+      <input type="text" name="year" id="year">
+      <label for="month">Month:</label>
+      <input type="text" name="month" id="month">
+      <label for="day">Day:</label>
+      <input type="text" name="day" id="day">
+      <input type="submit" value="Predict">
+    </form>
+  {% endif %}
+{% if selected_prediction %}
+<h2>Prediction for trial {{ selected_trial }}: {{ selected_prediction }}</h2>
+{% endif %}
+
+</body>
+</html>

@@ -2,7 +2,7 @@
 This webapp is built using Flask, a Python web framework, and HTML for the front-end. The app uses a Random Forest model to predict the colors based on the date and trial entered by the user.
 
 ### Running the Flask App
-To run the Flask app, you will need to have Python and Flask installed on your machine. You can check if you have Python installed by running python --version in your command line. If it is not installed, you can download it from the official website: https://www.python.org/downloads/.
+To run the Flask app, you will need to have Python and Flask installed on your machine. You can check if you have Python installed by running python --version in your command line. If it is not installed, you can download it from the official website: https://www.python.org/downloads/. The python code for the flask was made with python version 3.11.
 
 Once you have Python installed, you can install Flask by running in your command line:
 

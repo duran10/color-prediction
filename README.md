@@ -55,6 +55,8 @@ For example the last period record is "20230128095" this means that the year is 
 
 Suppose you want to predict the next trial number for that date you should introduce in the webapp for year: 2023, for month: 1, for day: 28 and select the trial number 96. After introducing these inputs the webapp will give you the predicted color being "Red" or "Green".
 
+An important note is that the maximum numbers of trials the game runs in a day is 480. The the game will start again the next day from trial number 1.
+
 #### Important!
 
 When you stop using the webapp it is important that you stop the running process of the python file. If you want to use the webapp again you should run again the python file "color_flask.py" and follow the steps said before.
